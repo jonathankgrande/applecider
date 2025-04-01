@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Your Booking</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-orange-50 text-gray-800 font-sans">
+  <!-- Same Nav Bar -->
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <span class="text-2xl">🍎</span>
+      <h1 class="text-xl font-semibold text-red-800">Apple Cider Project</h1>
+    </div>
+    <nav class="flex items-center gap-4">
+      <a href="#" class="text-red-800 font-medium">Home</a>
+      <a href="events.html" class="text-red-800 font-medium">Events</a>
+      <a href="#" class="text-red-800 font-medium">About Us</a>
+      <a href="#" class="text-red-800 font-medium">Contact</a>
+      <span class="text-red-800 font-medium">Hours</span>
+    </nav>
+  </header>
+
+  <!-- Confirmation Content -->
+  <main class="max-w-6xl mx-auto py-40 px-60">
+    <div class="grid md:grid-cols-3 gap-10">
+      <!-- Left Section -->
+      <div class="md:col-span-2">
+        <h2 class="text-xl font-bold text-gray-800 border-b pb-2">Confirm Your Attendance</h2>
+        <p class="text-sm text-gray-600 mt-2">
+            You're confirming for: <strong id="eventTitle">Loading...</strong>
+          </p>
+          <p class="text-sm text-gray-600">
+            Date: <strong id="eventDate">--</strong> | Time: <strong id="eventTime">--</strong>
+          </p>          
+
+        <div class="mt-6">
+          <h3 class="text-md font-semibold text-gray-800 mb-2">Select Number of Tickets</h3>
+          <div class="flex items-center gap-3">
+            <span id="ticketPrice" class="w-20"> $0.00</span>
+            <button onclick="updateTickets(-1)"class="bg-gray-300 px-2">-</button>
+            <input id="ticketInput" type="number" value="1" class="w-12 text-center border border-gray-300">
+            <button onclick="updateTickets(1)"class="bg-gray-300 px-2">+</button>
+          </div>
+        </div>
+
+        <div class="mt-8 border-t pt-4">
+          <button 
+          onclick="window.location.href='success.html'"
+          class="bg-green-700 text-white px-6 py-2 rounded hover:bg-green-800">Confirm Booking</button>
+        </div>
+      </div>
+
+      <!-- Right Summary -->
+      <div class="border border-gray-300 p-4 rounded">
+        <div class="flex justify-between items-center border-b pb-2">
+          <h4 class="text-sm font-semibold text-gray-700">🎟️ <span id="summaryTitle">Loading...</span></span></h4>
+          <span class="text-sm text-gray-600 cursor-pointer">✕</span>
+        </div>
+        <div class="mt-4 text-sm text-gray-700">
+          <p>Total Cost</p>
+          <p class="text-lg font-bold mt-2">$0.00</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-6 text-sm text-gray-500 border-t mt-12">
+    Tickets to multiple films must be purchased in separate transactions.
+  </footer>
+  <script src="localstorage.js"></script>
+  <script src="confirmAtt.js"></script>
+  <script src="ticketUpdate.js"></script>
+
+
+</body>
+
+</html>
